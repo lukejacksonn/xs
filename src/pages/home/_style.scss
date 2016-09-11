@@ -1,0 +1,12 @@
+page-home {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  div {
+    margin: auto;
+    text-align: center;
+    >*+* {
+      margin-top: .618rem;
+    }
+  }
+}

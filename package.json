@@ -1,0 +1,32 @@
+{
+  "name": "xs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.js",
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "html,js,scss",
+      "quiet": true
+    },
+    "serve": "serve.js"
+  },
+  "scripts": {
+    "build": "node build",
+    "serve": "node serve",
+    "start": "npm-watch"
+  },
+  "keywords": [],
+  "author": "Luke Jackson <lukejacksonn@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "harp-minify": "^0.4.0",
+    "node-sass": "^3.9.3",
+    "npm-watch": "^0.1.6"
+  }
+}

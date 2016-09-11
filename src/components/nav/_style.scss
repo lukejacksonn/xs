@@ -1,0 +1,16 @@
+nav {
+  display: flex;
+  a {
+    border: 1px solid #000;
+    padding: .618rem 1rem;
+    color: #000;
+    text-decoration: none;
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+  > *+* {
+    margin-left: .618rem;
+  }
+}

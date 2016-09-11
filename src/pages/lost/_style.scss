@@ -1,0 +1,17 @@
+page-lost {
+  display: flex;
+  flex-direction: column;
+  background: #a41034;
+  nav a {
+    border: 1px solid #fff;
+    color: #fff;
+  }
+  div {
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    > *+* {
+      margin-top: .618rem;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+page-demo {
+  display: flex;
+  flex-direction: column;
+  background: #121212;
+  color: #fff;
+  nav a {
+    border: 1px solid #fff;
+    color: #fff;
+  }
+  div {
+    margin: auto;
+    text-align: center;
+    >*+* {
+      margin-top: .618rem;
+    }
+  }
+}

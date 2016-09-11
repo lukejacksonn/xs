@@ -1,0 +1,34 @@
+@import 'src/pages/home/style';
+@import 'src/pages/lost/style';
+@import 'src/pages/demo/style';
+
+@import 'src/components/nav/style';
+
+* {
+  display: block;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+head,
+script,
+style {
+  display: none;
+}
+
+html {
+  font: normal calc(10px + 1vw) sans-serif;
+  background: #fff;
+}
+
+main > * {
+  padding: 1rem;
+  min-height: 100vh;
+  > *+* {
+    margin-top: 1rem;
+  }
+}
