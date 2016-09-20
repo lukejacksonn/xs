@@ -9,9 +9,9 @@ page-demo {
   }
   div {
     margin: auto;
-    text-align: center;
+    svg { margin: 0 auto; }
     >*+* {
-      margin-top: .618rem;
+      margin-top: 1.618rem;
     }
   }
 }

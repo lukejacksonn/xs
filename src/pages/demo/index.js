@@ -9,8 +9,8 @@ const View = (state) => {
     '/more': 'More',
   }));
   $container.appendChild(Div(x => `
-    <h1>DEMO</h1>
-    <p>Woahhh, the page changed</p>
+    <svg><use xlink:href='#i-settings'></svg>
+    <p>Woah, the page changed</p>
   `)(state));
   return $container;
 }

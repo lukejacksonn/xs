@@ -8,7 +8,7 @@
       "patterns": [
         "src"
       ],
-      "extensions": "html,js,scss",
+      "extensions": "htm,js,scss",
       "quiet": true
     },
     "serve": "serve.js"
@@ -27,6 +27,8 @@
     "browserify": "^13.1.0",
     "harp-minify": "^0.4.0",
     "node-sass": "^3.9.3",
-    "npm-watch": "^0.1.6"
+    "npm-watch": "^0.1.6",
+    "recursive-readdir": "^2.1.0",
+    "svgo": "^0.7.0"
   }
 }

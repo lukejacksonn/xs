@@ -6,5 +6,5 @@ http.createServer((req, res) => {
   const status = req.url === '/' ? 200 : 301;
   // Send distributed app file
   res.writeHead(status, { 'Content-Type': 'text/html' });
-  res.end(fs.readFileSync('dist/index.html', 'utf8'));
+  res.end(fs.readFileSync('index.html', 'utf8'));
 }).listen(8080);

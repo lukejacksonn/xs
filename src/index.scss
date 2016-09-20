@@ -16,13 +16,21 @@
 
 head,
 script,
-style {
+style,
+svgs {
   display: none;
 }
 
 html {
   font: normal calc(10px + 1vw) sans-serif;
   background: #fff;
+  color: #000;
+}
+
+svg {
+  width: 6rem;
+  height: 6rem;
+  stroke-width: 3.125%; 
 }
 
 main > * {

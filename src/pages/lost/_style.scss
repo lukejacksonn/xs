@@ -10,8 +10,9 @@ page-lost {
     margin: auto;
     text-align: center;
     color: #fff;
+    svg { margin: 0 auto; }
     > *+* {
-      margin-top: .618rem;
+      margin-top: 1.618rem;
     }
   }
 }

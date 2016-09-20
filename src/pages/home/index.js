@@ -8,8 +8,8 @@ const View = (state) => {
     '/demo': 'Demo',
   }));
   $container.appendChild(Div(x => `
-    <h1>HOME</h1>
-    <p>Hey there, try the demo</p>
+    <svg><use xlink:href="#i-home"></svg>
+    <p>Hey, try out the demo</p>
   `)(state));
   return $container;
 };
