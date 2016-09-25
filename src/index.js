@@ -16,6 +16,7 @@ window.onpopstate = () => {
   while ($body.firstChild) $body.removeChild($body.firstChild);
   // Route according to pathname
   switch (window.location.pathname) {
+    case '/xs':
     case '/': render(homePage()); break;
     case '/demo': render(demoPage()); break;
     default: render(lostPage()); break;
