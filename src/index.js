@@ -24,5 +24,5 @@ window.onpopstate = () => {
 
 // Route path with repo name stripped
 const path = window.location.pathname.replace('/xs','/');
-history.replaceState(null, null, path);
+history.pushState(null, null, path);
 window.onpopstate();
