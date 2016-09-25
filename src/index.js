@@ -1,4 +1,4 @@
-// Required Views
+// Required Pages
 import homePage from './pages/home';
 import lostPage from './pages/lost';
 import demoPage from './pages/demo';
@@ -22,6 +22,7 @@ window.onpopstate = () => {
   };
 };
 
-// Route on page load
-history.pushState(null, null, window.location.pathname);
-history.go(-1);
+// Route path with repo name stripped
+const path = window.location.pathname.replace('/xs','/');
+history.replaceState(null, null, path);
+window.onpopstate();

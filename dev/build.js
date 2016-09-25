@@ -1,13 +1,10 @@
+// Node Libraries
 const fs = require('fs');
 
+// External Dependencies
 const sass = require('node-sass');
 const bf = require('browserify');
 const min = require('harp-minify');
-const dir = require('recursive-readdir');
-const svgo = require('svgo');
-
-// Configure svgo
-const s = new svgo({ plugins: [{cleanupIDs: false, }] });
 
 // Configure browserify and babel
 const b = bf().transform('babelify', { presets: ['es2015'] });
@@ -30,21 +27,10 @@ const js = new Promise((resolve, reject) => {
   });
 });
 
-// Concat svg files into one
-const svg = new Promise((resolve, reject) => {
-  const optim = path => new Promise((resolve, reject) => s.optimize(f(path), x => resolve(x)));
-  const isvg = (f) => f.endsWith('.svg');
-  dir('src/assets', (err, files) => {
-    resolve(Promise.all(files.filter(isvg).map(b => optim(b))));
-  });
-});
-
 // Inject transformed code into dist file
-Promise.all([js, css, svg]).then(files => {
-  const svgs = files[2].map(x => x.data);
+Promise.all([js, css]).then(files => {
   fs.writeFileSync('index.html', f('index.html')
     .replace(/<style>(.+)?<\/style>/, `<style>${min.css(files[1])}</style>`)
     .replace(/<script>(.+)?<\/script>/, `<script>${min.js(files[0])}</script>`)
-    .replace(/<svgs>(.+)?<\/svgs>/, `<svgs>${svgs.join('')}</svgs>`)
   , 'utf8');
 }).catch(e => console.log(e));

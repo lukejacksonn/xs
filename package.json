@@ -11,11 +11,11 @@
       "extensions": "htm,js,scss",
       "quiet": true
     },
-    "serve": "serve.js"
+    "serve": "dev/serve.js"
   },
   "scripts": {
-    "build": "node build",
-    "serve": "node serve",
+    "build": "node dev/build",
+    "serve": "node dev/serve",
     "start": "npm-watch"
   },
   "keywords": [],
@@ -27,8 +27,6 @@
     "browserify": "^13.1.0",
     "harp-minify": "^0.4.0",
     "node-sass": "^3.9.3",
-    "npm-watch": "^0.1.6",
-    "recursive-readdir": "^2.1.0",
-    "svgo": "^0.7.0"
+    "npm-watch": "^0.1.6"
   }
 }
