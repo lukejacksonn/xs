@@ -3,12 +3,16 @@ import homePage from './pages/home';
 import lostPage from './pages/lost';
 import demoPage from './pages/demo';
 
+// Check to see if github redirect has occured
+const redirect = sessionStorage.redirect;
+delete sessionStorage.redirect;
+if (redirect && redirect != location.href) {
+  history.replaceState(null, null, redirect);
+}
+
 // Application root element
 const $body = document.querySelector('main');
-
-// Routing functions
 const render = view => $body.appendChild(view);
-const redirect = url => window.location.replace(url);
 
 // Route Handler
 window.onpopstate = () => {
