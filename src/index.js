@@ -22,7 +22,6 @@ window.onpopstate = () => {
   };
 };
 
-// Route path with repo name stripped
-const path = window.location.pathname.replace('/xs','/');
-history.pushState(null, null, path);
-window.onpopstate();
+// Route on page load
+history.pushState(null, null, window.location.pathname);
+history.go(-1);
