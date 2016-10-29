@@ -1,4 +1,4 @@
-import {Fetch, Node, Bind, Draw} from '../../xs';
+import {Draw} from '../../xs';
 import Nav from '../../components/nav';
 import Div from '../../components/div';
 
