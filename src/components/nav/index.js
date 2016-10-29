@@ -1,17 +1,22 @@
-const Component = (state) => {
-  const $container = document.createElement('nav');
-  const template = (x = {}) => Object.keys(x).map(href => `
-    <a href='${href}'>${x[href]}</a>
-  `).join('');
-  $container.innerHTML = template(state);
-  // Ensure rendered internal links are handled by router
-  [...$container.querySelectorAll(`a[href^="/"]`)]
-  .forEach(x => x.addEventListener('click', e => {
+import {Fetch, Node, Bind} from '../../xs';
+
+const actions = {
+  navigate(e) {
     e.preventDefault();
     history.pushState(null, null, e.currentTarget.href);
     window.onpopstate();
-  }));
-  return $container;
+  }
 };
 
-export default Component;
+const link = x => href =>
+  `<a href='${href}'>${x[href]}</a>`
+
+const template = x => `
+  <nav>${
+    Object.keys(x).map(link(x)).join('')
+  }</nav>`;
+
+export default (state) =>
+  Fetch(state)
+  .then(Node(template))
+  .then(Bind('a[href^="/"]')('click')(actions.navigate));
